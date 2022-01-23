@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="nbbs2022:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>nbbs2022</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="nbbs2022-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="nbbs2022:war exploded" />
+    </root>
+  </artifact>
+</component>
