@@ -14,16 +14,16 @@ public class AddBranchServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Copying all the input parameters in to local variables
-        String branchName = request.getParameter("branchname");
         String branchID = request.getParameter("branchid");
+        String branchName = request.getParameter("branchname");
         String branchAddress = request.getParameter("branchaddress");
         String branchPhone = request.getParameter("branchphone");
         int numOfWorker = Integer.parseInt(request.getParameter("numofworker"));
 
         branch addbr = new branch();
         //Using Java Beans - An easiest way to play with group of related data
-        addbr.setBranchName(branchName);
-        addbr.setBranchID(branchID);
+        addbr.setBranchName(branchID);
+        addbr.setBranchID(branchName);
         addbr.setBranchAddress(branchAddress);
         addbr.setBranchPhone(branchPhone);
         addbr.setNumOfWorker(numOfWorker);

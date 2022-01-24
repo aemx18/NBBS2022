@@ -8,13 +8,12 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-
-
-
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="org.postgresql.Driver"%>
+
 <%
     String driver = "org.postgresql.Driver";
     String connectionUrl = "postgresql://postgres:system@localhost:5432/d2jslmmo2apk58";
@@ -124,7 +123,7 @@
             <div class="view">
                 <center>
                     <br>
-                    <div class="exit"><a href="branch.jsp">&#9746;</a></div>
+                    <div class="exit"><a href="admin-branch.jsp">&#9746;</a></div>
                     <img src="image/logo.png" style="width:150px; height:150px" >
                     <h1>MANAGE BRANCH</h1>
                     <div class="rectangle"></div><br>

@@ -2,6 +2,7 @@ package com.example.nbbs2022.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import org.postgresql.Driver;
 
 public class DBconnection {
     public static Connection createConnection()

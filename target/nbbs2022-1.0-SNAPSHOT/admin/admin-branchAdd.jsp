@@ -103,7 +103,7 @@
     </style>
 </head>
 <body>
-    <%@include file="admin-branch.jsp"%>
+
     <div class="overlay"></div>
     <div class="container">
         <form action="/AddBranchServlet" method="post">

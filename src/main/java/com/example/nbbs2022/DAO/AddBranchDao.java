@@ -2,6 +2,7 @@ package com.example.nbbs2022.DAO;
 
 import com.example.nbbs2022.model.branch;
 import com.example.nbbs2022.connection.DBconnection;
+import org.postgresql.Driver;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,8 +12,8 @@ public class AddBranchDao
 {
     public String registerBranch(branch addbr)
     {
-        String branchName = addbr.getBranchName();
         String branchID = addbr.getBranchID();
+        String branchName = addbr.getBranchName();
         String branchAddress = addbr.getBranchAddress();
         String branchPhone = addbr.getBranchPhone();
         int numOfWorker = addbr.getNumOfWorker();
@@ -22,11 +23,11 @@ public class AddBranchDao
         try
         {
             con = DBconnection.createConnection();
-            String query = "insert into branch(branchName,branchID,branchAddress,branchPhone,numOfWorker)" +
+            String query = "insert into branch(branchID,branchName,branchAddress,branchPhone,numOfWorker)" +
                     " values (?,?,?,?,?)"; //Insert user details into the table 'USERS'
             preparedStatement = con.prepareStatement(query); //Making use of prepared statements here to insert bunch of data
-            preparedStatement.setString(1, branchName);
-            preparedStatement.setString(2, branchID);
+            preparedStatement.setString(1, branchID);
+            preparedStatement.setString(2, branchName);
             preparedStatement.setString(3, branchAddress);
             preparedStatement.setString(4, branchPhone);
             preparedStatement.setInt(5, numOfWorker);
