@@ -5,7 +5,29 @@
   Time: 1:20 AM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%
+    String driver = "com.mysql.jdbc.Driver";
+    String connectionUrl = "jdbc:mysql://localhost:3306/d2jslmmo2apk58";
+    String database = "d2jslmmo2apk58";
+    String userid = "bqhlgkdbctukpq";
+    String password = "";
+    try {
+        Class.forName(driver);
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    }
+    Connection connection = null;
+    Statement statement = null;
+    ResultSet resultSet = null;
+%>
 <html>
 <head>
     <title>ADMIN - BRANCH</title>
@@ -100,37 +122,46 @@
             <div class="view">
                 <center>
                     <br>
-                    <div class="exit"><a href="admin-branch.jsp">&#9746;</a></div>
-                    <img src="../img/logo.png" style="width:150px; height:150px" >
+                    <div class="exit"><a href="branch.jsp">&#9746;</a></div>
+                    <img src="image/logo.png" style="width:150px; height:150px" >
                     <h1>MANAGE BRANCH</h1>
                     <div class="rectangle"></div><br>
 
-                    <a href="">
-                        <div class="platter">
-                            <div style="font-size: 10px; color: rgba(255, 255, 255, 0.6)">NBARBERSHOP</div><br>
-                            <div style="font-size: 23px">BRANCH</div>
-                            <div style="font-size: 30px">SIMPANG YOOI I</div>
-                        </div><br>
-                    </a>
+                    <%
+                        try
+                        {
+                            connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+                            statement=connection.createStatement();
+                            String sql ="select * from branch";
+                            resultSet = statement.executeQuery(sql);
 
-                    <a href="">
+                            while(resultSet.next())
+                            {
+                    %>
+
+
+
+                    <a href="EditBranch.jsp">
                         <div class="platter">
                             <div style="font-size: 10px ;color: rgba(255, 255, 255, 0.6)">NBARBERSHOP</div><br>
                             <div style="font-size: 23px">BRANCH</div>
-                            <div style="font-size: 30px">SIMPANG YOOI II</div>
-                        </div><br>
-                    </a>
-
-                    <a href="">
-                        <div class="platter">
-                            <div style="font-size: 10px ;color: rgba(255, 255, 255, 0.6)">NBARBERSHOP</div><br>
-                            <div style="font-size: 23px">BRANCH</div>
-                            <div style="font-size: 30px">MATA AYER I</div>
+                            <div style="font-size: 30px"><%=resultSet.getString("branchName") %></div>
                         </div>
-                    </a>
+                    </a><br>
+
+                    <%
+                            }
+                            connection.close();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    %>
+
                 </center>
             </div>
         </form>
+</body>
+</html>
     </div>
 </body>
 </html>
