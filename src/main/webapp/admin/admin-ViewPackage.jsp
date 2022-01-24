@@ -35,9 +35,10 @@
             margin: 13px -36px;
             background: transparent;
             border-collapse: collapse;
-            width: 45%;
+            width: 70%;
             display: block;
             padding: 20px;
+            text-align: center;
         }
         td, tr{
             font-size: 20px;
@@ -130,7 +131,7 @@
         <br>
         <h2>View Package Details</h2>
         <hr>
-        <table class="table">
+        <table class="table" >
             <tr>
                 <th>Package ID</th>
                 <th>Package Name</th>
@@ -138,25 +139,30 @@
             </tr>
             <tr>
                 <td>pkg001</td>
-                <td>Cut hair</td>
-                <td>Rm9.00</td>
+                <td>Scalp Message & Conditioning Treatment</td>
+                <td>Rm50.00</td>
             </tr>
             <tr>
                 <td>pkg002</td>
-                <td>Hair Dye</td>
-                <td>RM10.00</td>
+                <td>Hair Coloring</td>
+                <td>RM80.00</td>
             </tr>
             <tr>
                 <td>pkg003</td>
-                <td>Shampoo</td>
-                <td>RM5.00</td>
+                <td>Straight Razor</td>
+                <td>RM15.00</td>
             </tr>
-
-
-
+            <tr>
+                <td>pkg004</td>
+                <td>Wet Shave</td>
+                <td>RM15.00</td>
+            </tr>
+            <tr>
+                <td>pkg005</td>
+                <td>No Package</td>
+                <td>RM0.00</td>
+            </tr>
         </table>
-
-
     </div>
 </body>
 </html>

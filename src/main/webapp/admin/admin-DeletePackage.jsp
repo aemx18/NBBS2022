@@ -96,7 +96,10 @@
             cursor: pointer;
             background-color: cadetblue;
             padding: 4px;
-
+        }
+        button a{
+            text-decoration: none;
+            color: black;
         }
     </style>
 </head>
@@ -139,21 +142,33 @@
             </tr>
             <tr>
                 <td>pkg001</td>
-                <td>Cut hair</td>
-                <td>Rm9.00</td>
-                <td><button> Delete </button></td>
+                <td>Scalp Message & Conditioning Treatment</td>
+                <td>Rm50.00</td>
+                <td><button> DELETE </button></td>
             </tr>
             <tr>
                 <td>pkg002</td>
-                <td>Hair Dye</td>
-                <td>RM10.00</td>
-                <td><button> Delete </button></td>
+                <td>Hair Coloring</td>
+                <td>RM80.00</td>
+                <td><button> DELETE </button></td>
             </tr>
             <tr>
                 <td>pkg003</td>
-                <td>Shampoo</td>
-                <td>RM5.00</td>
-                <td><button> Delete </button></td>
+                <td>Straight Razor</td>
+                <td>RM15.00</td>
+                <td><button> DELETE </button></td>
+            </tr>
+            <tr>
+                <td>pkg004</td>
+                <td>Wet Shave</td>
+                <td>RM15.00</td>
+                <td><button><a href=""> DELETE </a></button></td>
+            </tr>
+            <tr>
+                <td>pkg005</td>
+                <td>No Package</td>
+                <td>RM0.00</td>
+                <td><button><a href=""> DELETE </a></button></td>
             </tr>
 
 

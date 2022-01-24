@@ -106,7 +106,7 @@
     <%@include file="admin-branch.jsp"%>
     <div class="overlay"></div>
     <div class="container">
-        <form action="" method="">
+        <form action="/AddBranchServlet" method="post">
             <div class="register">
                 <center>
                     <br>
@@ -119,6 +119,7 @@
                     <input type="text" placeholder="Branch Address"><br><br>
                     <input type="text" placeholder="Branch Phone"><br><br>
                     <input type="number" placeholder="Number of Worker"><br><br>
+                    <%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%>
                     <button type="submit"><a href="admin-branchView.jsp">REGISTER</a></button>
                 </center>
             </div>

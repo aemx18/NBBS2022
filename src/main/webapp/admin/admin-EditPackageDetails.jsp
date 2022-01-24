@@ -133,13 +133,13 @@
     <table class="table">
         <tr>
             <td>Package ID</td>
-            <td><input type="text" value="pkg001" readonly ></td>
+            <td><input type="text" value="pkg001"  ></td>
         </tr><tr>
         <td>Package Name</td>
-        <td><input type="text" value="Cut Hair" readonly></td>
+        <td><input type="text" value="Scalp Message & Conditioning Treatment" ></td>
     </tr><tr>
         <td>Package Price</td>
-        <td><input type="text" value="RM8.00" readonly></td>
+        <td><input type="text" value="RM50.00" ></td>
     </tr>
 
 

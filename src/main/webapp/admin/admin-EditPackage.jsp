@@ -35,9 +35,10 @@
             margin: 13px -36px;
             background: transparent;
             border-collapse: collapse;
-            width: 45%;
+            width: 70%;
             display: block;
             padding: 20px;
+            text-align: center;
         }
         td, tr{
             font-size: 20px;
@@ -139,25 +140,34 @@
         </tr>
         <tr>
             <td>pkg001</td>
-            <td>Cut hair</td>
-            <td>Rm9.00</td>
+            <td>Scalp Message & Conditioning Treatment</td>
+            <td>Rm50.00</td>
             <td><a href="admin-EditPackageDetails.jsp"> Edit </a></td>
         </tr>
         <tr>
             <td>pkg002</td>
-            <td>Hair Dye</td>
-            <td>RM10.00</td>
-            <td><a> Edit </a></td>
+            <td>Hair Coloring</td>
+            <td>RM80.00</td>
+            <td><a href="admin-EditPackageDetails.jsp"> Edit </a></td>
         </tr>
         <tr>
             <td>pkg003</td>
-            <td>Shampoo</td>
-            <td>RM5.00</td>
-            <td><a> Edit </a></td>
+            <td>Straight Razor</td>
+            <td>RM15.00</td>
+            <td><a href="admin-EditPackageDetails.jsp"> Edit </a></td>
         </tr>
-
-
-
+        <tr>
+            <td>pkg004</td>
+            <td>Wet Shave</td>
+            <td>RM15.00</td>
+            <td><a href="admin-EditPackageDetails.jsp"> Edit </a></td>
+        </tr>
+        <tr>
+            <td>pkg005</td>
+            <td>No Package</td>
+            <td>RM0.00</td>
+            <td><a href="admin-EditPackageDetails.jsp"> Edit </a></td>
+        </tr>
     </table>
 </div>
 </body>
