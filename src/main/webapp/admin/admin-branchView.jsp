@@ -9,16 +9,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
+
+
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
-    String driver = "com.mysql.jdbc.Driver";
-    String connectionUrl = "jdbc:mysql://localhost:3306/d2jslmmo2apk58";
+    String driver = "org.postgresql.Driver";
+    String connectionUrl = "postgresql://postgres:system@localhost:5432/d2jslmmo2apk58";
     String database = "d2jslmmo2apk58";
     String userid = "bqhlgkdbctukpq";
-    String password = "";
+    String password = "f8202aa6f6074e4ebe6b564d3e673feb541efa8b39394e990660b031400b7bc0";
     try {
         Class.forName(driver);
     } catch (ClassNotFoundException e) {
