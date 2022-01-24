@@ -2,7 +2,6 @@ package com.example.nbbs2022.DAO;
 
 import com.example.nbbs2022.model.branch;
 import com.example.nbbs2022.connection.DBconnection;
-import org.postgresql.Driver;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -8,13 +8,12 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-
-
-
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="org.postgresql.Driver"%>
+
 <%
     String driver = "org.postgresql.Driver";
     String connectionUrl = "postgresql://postgres:system@localhost:5432/d2jslmmo2apk58";

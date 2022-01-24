@@ -1,4 +1,4 @@
-package com.example.nbbs2022.connection;
+package com.example.nbbs2022.controller;
 import com.example.nbbs2022.model.branch;
 import com.example.nbbs2022.DAO.AddBranchDao;
 import javax.servlet.*;
