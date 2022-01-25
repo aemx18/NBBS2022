@@ -25,8 +25,10 @@
             <h3>Welcome To...</h3>
         </div>
 
+        <div style="margin-left: 10%">
         <div class="neon-wrapper">
             <span class="txt">N'Barbershop</span>
+        </div>
         </div>
 
         <div class="booking-system">
@@ -38,7 +40,7 @@
             <p style="text-align: center; color: white; "> MAKE EACH HAIR FLIP FABULOUS</p>
         </div><br>
 
-        <div>
+        <div style="margin-left: 10%">
             <button type="button" id="customer" style="width: 200px;
                                     padding: 15px 0;
                                     text-align: center;
@@ -74,7 +76,9 @@
                                     cursor: pointer;">
             ADMIN</button>
         </div>
+
     </div>
+
     <script type="text/javascript">
         document.getElementById("logo-index").onclick = function ()
         {

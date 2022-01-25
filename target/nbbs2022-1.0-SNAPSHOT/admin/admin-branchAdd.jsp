@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <html>
 <head>
     <title>ADMIN - BRANCH</title>
@@ -33,12 +35,13 @@
             min-height: 600px;
             position: relative;
             margin-top: -740px;
-            margin-left: 495px;
+            margin-left: 433px;
+
         }
         .register
         {
             color:white;
-            margin-left: 0%;
+            margin-left: 0.1%;
             width: 860px;
             height: 725px;
             background: linear-gradient(90deg, #4a8bb0 0%, hsl(315, 60%, 46%) 100%);
@@ -73,13 +76,13 @@
             font-size:20px;
             width: 20%;
             padding: 16px 8px;
+
+            color: white;
+
         }
 
-        button a
-        {
-            text-decoration: none;
-            color: white;
-        }
+
+
 
         ::placeholder
         {
@@ -100,13 +103,14 @@
             color: black;
         }
     </style>
-    </style>
+
 </head>
 <body>
     <%@include file="admin-branch.jsp"%>
     <div class="overlay"></div>
+    <center>
     <div class="container">
-        <form action="/AddBranchServlet" method="post">
+        <form action="../AddBranchServlet" method="post">
             <div class="register">
                 <center>
                     <br>
@@ -114,16 +118,21 @@
                     <img src="../img/logo.png" style="width:150px; height:150px" >
                     <h1>NEW BRANCH</h1>
                     <div class="rectangle"></div><br>
-                    <input type="text" name="branchname" placeholder="Branch Name"><br><br>
                     <input type="text" name="branchid" placeholder="Branch ID"><br><br>
+                    <input type="text" name="branchname" placeholder="Branch Name"><br><br>
                     <input type="text" name="branchaddress" placeholder="Branch Address"><br><br>
                     <input type="text" name="branchphone" placeholder="Branch Phone"><br><br>
                     <input type="number" name="numofworker" placeholder="Number of Worker"><br><br>
                     <%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%>
-                    <button type="submit"><a href="admin-branchView.jsp">REGISTER</a></button>
+                    <button type="submit" value="register">REGISTER</button>
                 </center>
             </div>
         </form>
     </div>
+    </center>
+
+
+
+
 </body>
 </html>

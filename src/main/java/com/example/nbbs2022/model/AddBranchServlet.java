@@ -1,9 +1,9 @@
-package com.example.nbbs2022.controller;
-import com.example.nbbs2022.model.branch;
-import com.example.nbbs2022.DAO.AddBranchDao;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+package com.example.nbbs2022.model;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "AddBranchServlet", value = "/AddBranchServlet")
@@ -22,8 +22,8 @@ public class AddBranchServlet extends HttpServlet {
 
         branch addbr = new branch();
         //Using Java Beans - An easiest way to play with group of related data
-        addbr.setBranchName(branchID);
-        addbr.setBranchID(branchName);
+        addbr.setBranchID(branchID);
+        addbr.setBranchName(branchName);
         addbr.setBranchAddress(branchAddress);
         addbr.setBranchPhone(branchPhone);
         addbr.setNumOfWorker(numOfWorker);
@@ -35,7 +35,8 @@ public class AddBranchServlet extends HttpServlet {
 
         if(branchRegistered.equals("SUCCESS"))   //On success, you can display a message to user on Home page
         {
-            request.getRequestDispatcher("/admin-branchView.jsp").forward(request, response);
+//            request.getRequestDispatcher("/Admin/Branch/ViewBranch.jsp").forward(request, response);
+            response.sendRedirect("/admin/admin-branchView.jsp");
         }
         else   //On Failure, display a meaningful message to the User.
         {

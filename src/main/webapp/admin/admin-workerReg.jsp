@@ -31,8 +31,8 @@
             max-width: 100%;
             min-height: 600px;
             position: relative;
-            margin-top: -160%;
-            margin-left: 402px;
+            margin-top: -165%;
+            margin-left: 400px;
             display: block;
         }
         .containerReg h1{
@@ -125,6 +125,7 @@
                 <img src="../img/logo.png" style="width: 15%;">
                 <h1>Worker Registration</h1>
                 <hr style="margin-top: 0%">
+                 <input type="text" placeholder="Worker ID" required /> <br/>
                 <input type="text" placeholder="Name" required /> <br/>
                 <input type="number" placeholder="IC number" required /> <br>
                 <input type="email" placeholder="Email" required /> <br>

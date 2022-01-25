@@ -1,7 +1,5 @@
-package com.example.nbbs2022.DAO;
+package com.example.nbbs2022.model;
 
-import com.example.nbbs2022.model.branch;
-import com.example.nbbs2022.connection.DBconnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +7,13 @@ import java.sql.SQLException;
 
 public class AddBranchDao
 {
+
+
+    public AddBranchDao()
+    {
+
+    }
+
     public String registerBranch(branch addbr)
     {
         String branchID = addbr.getBranchID();
@@ -23,7 +28,7 @@ public class AddBranchDao
         {
             con = DBconnection.createConnection();
             String query = "insert into branch(branchID,branchName,branchAddress,branchPhone,numOfWorker)" +
-                    " values (?,?,?,?,?)"; //Insert user details into the table 'USERS'
+                           " values (?,?,?,?,?)"; //Insert user details into the table 'USERS'
             preparedStatement = con.prepareStatement(query); //Making use of prepared statements here to insert bunch of data
             preparedStatement.setString(1, branchID);
             preparedStatement.setString(2, branchName);

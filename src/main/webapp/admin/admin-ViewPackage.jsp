@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
   User: User
   Date: 16/1/2022
@@ -6,6 +9,23 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%
+        String driver = "org.postgresql.Driver";
+        String connectionUrl = "jdbc:postgresql://ec2-3-92-15-1.compute-1.amazonaws.com:5432/d2jslmmo2apk58";
+        String database = "d2jslmmo2apk58";
+        String userid = "bqhlgkdbctukpq";
+        String password = "f8202aa6f6074e4ebe6b564d3e673feb541efa8b39394e990660b031400b7bc0";
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+%>
 <html>
 <head>
     <title>ADMIN</title>
@@ -102,6 +122,8 @@
     </style>
 </head>
 <body>
+
+
     <ul>
         <center>
             <br><br>
@@ -131,38 +153,50 @@
         <br>
         <h2>View Package Details</h2>
         <hr>
+
+
         <table class="table" >
+
+
+
             <tr>
                 <th>Package ID</th>
                 <th>Package Name</th>
                 <th>Package Price</th>
             </tr>
+
+            <%
+                try
+                {
+                    connection = DriverManager.getConnection(connectionUrl, userid, password);
+                    statement=connection.createStatement();
+                    String sql ="select * from packages";
+                    resultSet = statement.executeQuery(sql);
+
+                    while(resultSet.next())
+                    {
+            %>
+
+
+
             <tr>
-                <td>pkg001</td>
-                <td>Scalp Message & Conditioning Treatment</td>
-                <td>Rm50.00</td>
+                <td><%=resultSet.getString("PackageID") %></td>
+                <td><%=resultSet.getString("packageName") %></td>
+                <td><%=resultSet.getString("packagePrice") %></td>
             </tr>
-            <tr>
-                <td>pkg002</td>
-                <td>Hair Coloring</td>
-                <td>RM80.00</td>
-            </tr>
-            <tr>
-                <td>pkg003</td>
-                <td>Straight Razor</td>
-                <td>RM15.00</td>
-            </tr>
-            <tr>
-                <td>pkg004</td>
-                <td>Wet Shave</td>
-                <td>RM15.00</td>
-            </tr>
-            <tr>
-                <td>pkg005</td>
-                <td>No Package</td>
-                <td>RM0.00</td>
-            </tr>
+
+            <%
+                    }
+                    connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            %>
+
+
         </table>
+
+
     </div>
 </body>
 </html>

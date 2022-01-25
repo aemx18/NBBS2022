@@ -1,14 +1,13 @@
-package com.example.nbbs2022.connection;
+package com.example.nbbs2022.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import org.postgresql.Driver;
 
 public class DBconnection {
     public static Connection createConnection()
     {
         Connection con = null;
-        String url = "postgresql://postgres:system@localhost:5432/d2jslmmo2apk58"; //MySQL URL followed by the database name
+        String url = "jdbc:postgresql://ec2-3-92-15-1.compute-1.amazonaws.com:5432/d2jslmmo2apk58"; //MySQL URL followed by the database name
         String username = "bqhlgkdbctukpq"; //MySQL username
         String password = "f8202aa6f6074e4ebe6b564d3e673feb541efa8b39394e990660b031400b7bc0"; //MySQL password
         System.out.println("In DBConnection.java class ");

@@ -75,10 +75,12 @@
     position: absolute;
     mix-blend-mode: difference;
     filter: blur(2px);
+
 }
 .neon-wrapper{
     display: inline-flex;
     filter: brightness(150%);
+
 }
 .booking-system h3{
     font-size: 35px;

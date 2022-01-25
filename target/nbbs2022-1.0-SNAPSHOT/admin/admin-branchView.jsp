@@ -8,15 +8,14 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.DriverManager" %>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="org.postgresql.Driver"%>
 
 <%
     String driver = "org.postgresql.Driver";
-    String connectionUrl = "postgresql://postgres:system@localhost:5432/d2jslmmo2apk58";
+    String connectionUrl = "jdbc:postgresql://ec2-3-92-15-1.compute-1.amazonaws.com:5432/d2jslmmo2apk58";
     String database = "d2jslmmo2apk58";
     String userid = "bqhlgkdbctukpq";
     String password = "f8202aa6f6074e4ebe6b564d3e673feb541efa8b39394e990660b031400b7bc0";
@@ -28,7 +27,9 @@
     Connection connection = null;
     Statement statement = null;
     ResultSet resultSet = null;
+
 %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>ADMIN - BRANCH</title>
@@ -118,20 +119,21 @@
 <body>
     <%@include file="admin-branch.jsp"%>
     <div class="overlay"></div>
+    <center>
     <div class="container">
         <form action="" method="">
             <div class="view">
                 <center>
                     <br>
                     <div class="exit"><a href="admin-branch.jsp">&#9746;</a></div>
-                    <img src="image/logo.png" style="width:150px; height:150px" >
+                    <img src="../img/logo.png" style="width:150px; height:150px" >
                     <h1>MANAGE BRANCH</h1>
                     <div class="rectangle"></div><br>
 
                     <%
                         try
                         {
-                            connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+                            connection = DriverManager.getConnection(connectionUrl, userid, password);
                             statement=connection.createStatement();
                             String sql ="select * from branch";
                             resultSet = statement.executeQuery(sql);
@@ -145,7 +147,7 @@
                     <a href="EditBranch.jsp">
                         <div class="platter">
                             <div style="font-size: 10px ;color: rgba(255, 255, 255, 0.6)">NBARBERSHOP</div><br>
-                            <div style="font-size: 23px">BRANCH</div>
+                            <div style="font-size: 30px"><%=resultSet.getString("branchID") %></div>
                             <div style="font-size: 30px"><%=resultSet.getString("branchName") %></div>
                         </div>
                     </a><br>
@@ -161,8 +163,9 @@
                 </center>
             </div>
         </form>
-</body>
-</html>
+
+
     </div>
+    </center>
 </body>
 </html>

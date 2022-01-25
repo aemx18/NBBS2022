@@ -11,6 +11,19 @@ public class branch
     public String branchPhone;
     public int numOfWorker;
 
+    public branch()
+    {
+
+    }
+
+    public branch(String branchName, String branchID, String branchAddress, String branchPhone, int numOfWorker) {
+        this.branchName = branchName;
+        this.branchID = branchID;
+        this.branchAddress = branchAddress;
+        this.branchPhone = branchPhone;
+        this.numOfWorker = numOfWorker;
+    }
+
     public void setBranchName(String branchName) {this.branchName = branchName;}
     public void setBranchID(String branchID) {this.branchID = branchID;}
     public void setBranchAddress(String branchAddress) {this.branchAddress = branchAddress;}

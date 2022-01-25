@@ -130,24 +130,27 @@
     <br>
     <h2>Add Package Details</h2>
     <hr>
+
+    <form class="" action="../addPackageServlet" method="post">
     <table class="table">
         <tr>
             <td>Package ID</td>
-            <td><input type="text" value="" readonly ></td>
+            <td><input type="text" name ="packageid"  ></td>
         </tr><tr>
         <td>Package Name</td>
-        <td><input type="text" value="" readonly></td>
+        <td><input type="text" name = "packagename" ></td>
     </tr><tr>
         <td>Package Price</td>
-        <td><input type="text" value="" readonly></td>
+        <td><input type="text" name = "packageprice"></td>
     </tr>
-
-
     </table>
 
     <div class="edit-profile">
-        <button type="submit"><a href="" >ADD    <i></i></a></button>
+        <button type="submit" value ="add">ADD </button>
     </div>
+
+  </form>
 </div>
+
 </body>
 </html>
